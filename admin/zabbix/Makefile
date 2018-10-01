@@ -8,15 +8,16 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=zabbix
-PKG_VERSION:=3.4.10
+PKG_VERSION:=3.4.14
 PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
-PKG_HASH:=cdee0fd44e11ae214b2cc252974da22f3627c326ea2c61a0315af95165c52d1b
+PKG_HASH:=7443873cc970672d3c884230d3aeb082f2d8afcc2b757506c2d684ffdd12d77e
 PKG_SOURCE_URL:=@SF/zabbix
 
 PKG_LICENSE:=GPL-2.0
 PKG_LICENSE_FILES:=COPYING
+PKG_CPE_ID:=cpe:/a:zabbix:zabbix
 
 PKG_INSTALL:=1
 
@@ -40,7 +41,7 @@ choice
                 bool "OpenSSL"
 
         config ZABBIX_GNUTLS
-                bool "GNUTLS"
+                bool "GnuTLS"
 
         config ZABBIX_NOSSL
                 bool "No SSL support"
@@ -52,7 +53,7 @@ define Package/zabbix/Default
   SECTION:=admin
   CATEGORY:=Administration
   TITLE:=Zabbix
-  URL:=http://www.zabbix.com/
+  URL:=https://www.zabbix.com/
   SUBMENU:=zabbix
   MAINTAINER:=Etienne CHAMPETIER <champetier.etienne@gmail.com>
   USERID:=zabbix=53:zabbix=53
